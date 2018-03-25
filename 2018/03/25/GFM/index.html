@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.6" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.0.6',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="看到儿子复习都是用markdown写的表示很羡慕QAQ">
+<meta name="keywords" content="Memo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GFM">
+<meta property="og:url" content="https://tobbbb.github.io/2018/03/25/GFM/index.html">
+<meta property="og:site_name" content="TOB&#39;s blog">
+<meta property="og:description" content="看到儿子复习都是用markdown写的表示很羡慕QAQ">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png">
+<meta property="og:image" content="https://tobbbb.github.io/2018/03/25/GFM/233">
+<meta property="og:updated_time" content="2018-03-25T11:51:42.028Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GFM">
+<meta name="twitter:description" content="看到儿子复习都是用markdown写的表示很羡慕QAQ">
+<meta name="twitter:image" content="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://tobbbb.github.io/2018/03/25/GFM/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>GFM | TOB's blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TOB's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+</li>
+
+      
+
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tobbbb.github.io/2018/03/25/GFM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TOB">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TOB's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">GFM</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T11:25:47+08:00">2018-03-25</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Memo/" itemprop="url" rel="index"><span itemprop="name">Memo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>看到儿子复习都是用markdown写的表示很羡慕QAQ</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h1 id="GFM简介"><a href="#GFM简介" class="headerlink" title="GFM简介"></a>GFM简介</h1><p>GFM, Github Flavored Markdown, 主要用于README文件中，与原生Markdown略有不同，至于具体有什么不同？我怎么知道 (摊手)</p>
+<hr>
+<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">***</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>数量大于3即可  </p>
+</blockquote>
+<p><strong>效果</strong></p>
+<hr>
+<hr>
+<hr>
+<h2 id="文字输入"><a href="#文字输入" class="headerlink" title="文字输入"></a>文字输入</h2><p>显然输入文字就是文字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">これは普通な文字だけです</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果</strong><br>これは普通な文字だけです</p>
+<h2 id="行与章节"><a href="#行与章节" class="headerlink" title="行与章节"></a>行与章节</h2><p>直接敲回车并不会换行，需要在行末加两个空格<br>或者直接空一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">换</span><br><span class="line">行</span><br><span class="line"></span><br><span class="line">换  (两个空格)</span><br><span class="line">行</span><br><span class="line"></span><br><span class="line">换</span><br><span class="line"></span><br><span class="line">行</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果</strong></p>
+<blockquote>
+<p>换<br>行</p>
+<p>换<br>行</p>
+<p>换</p>
+<p>行</p>
+</blockquote>
+<h2 id="字体效果"><a href="#字体效果" class="headerlink" title="字体效果"></a>字体效果</h2><h3 id="粗体·斜体·删除线"><a href="#粗体·斜体·删除线" class="headerlink" title="粗体·斜体·删除线"></a>粗体·斜体·删除线</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**粗体**</span></span><br><span class="line"><span class="emphasis">*斜体*</span></span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong>  </p>
+<blockquote>
+<p><strong>粗体</strong><br><em>斜体</em><br><del>删除线</del>  </p>
+</blockquote>
+<p>可以嵌套：<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">***又粗又斜**</span>*</span><br><span class="line">~~<span class="emphasis">*删除斜*</span>~~</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果</strong>  </p>
+<blockquote>
+<p><strong><em>又粗又斜</em></strong><br><del><em>删除斜</em></del>  </p>
+</blockquote>
+<h3 id="文本高亮"><a href="#文本高亮" class="headerlink" title="文本高亮"></a>文本高亮</h3><p>分为短高亮，单行高亮，以及块高亮<br>短高亮就是在给文字加上两个单引号<br><code>短</code> <code>高</code> <code>亮</code><br>单行高亮在行首加Tab/4个空格  </p>
+<pre><code>单行高亮
+</code></pre><p>块高亮 在需要高亮的部分前后各加三个引号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">文</span><br><span class="line">本</span><br><span class="line">高</span><br><span class="line">亮</span><br></pre></td></tr></table></figure>
+<p>也可以每行都缩进  </p>
+<pre><code>文
+本
+高
+亮
+</code></pre><p>（大概）也能用html实现更多字体效果</p>
+<h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>三个引号加语言名<br>中间代码<br>然后再三个引号<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>这和<a href="#文本高亮">块高亮</a>是类似的<br><strong>引号不能嵌套使用</strong></p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>引用并不是用引号，而是使用<code>&gt;</code>符号，并且可以嵌套<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; 编程这种东西谁都会的 --By 通信副院长</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>效果</strong></p>
+<blockquote>
+<p>编程这种东西谁都会的 – By 通信副院长</p>
+</blockquote>
+<p>多级引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; bzw  </span><br><span class="line">&gt; bwz</span><br><span class="line">&gt;&gt; G  </span><br><span class="line">&gt;&gt; G</span><br><span class="line">&gt;&gt;&gt; GG</span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong></p>
+<blockquote>
+<p>bzw<br>bwz</p>
+<blockquote>
+<p>G<br>G</p>
+<blockquote>
+<p>GG</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="序号及列表"><a href="#序号及列表" class="headerlink" title="序号及列表"></a>序号及列表</h2><h3 id="无序标号"><a href="#无序标号" class="headerlink" title="无序标号"></a>无序标号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* 1</span><br><span class="line">* 2</span><br><span class="line">- 3</span><br><span class="line">- 4</span><br><span class="line">* 5</span><br><span class="line">* 6</span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong></p>
+<blockquote>
+<ul>
+<li>1</li>
+<li>2</li>
+</ul>
+<ul>
+<li>3</li>
+<li>4</li>
+</ul>
+<ul>
+<li>5</li>
+<li>6</li>
+</ul>
+</blockquote>
+<h3 id="无序多级"><a href="#无序多级" class="headerlink" title="无序多级"></a>无序多级</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* 1</span><br><span class="line">    * 1.1</span><br><span class="line">    * 1.2</span><br><span class="line">* 2</span><br><span class="line">    * 2.1</span><br><span class="line">    - 2.2</span><br><span class="line">- 3</span><br><span class="line">    * 3.1</span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong></p>
+<blockquote>
+<ul>
+<li>1<ul>
+<li>1.1</li>
+<li>1.2</li>
+</ul>
+</li>
+<li>2<ul>
+<li>2.1</li>
+</ul>
+<ul>
+<li>2.2</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>3<ul>
+<li>3.1</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="有序标号"><a href="#有序标号" class="headerlink" title="有序标号"></a>有序标号</h3><ol>
+<li>这是1</li>
+<li>这是2</li>
+<li>这是3</li>
+</ol>
+<h3 id="多级有序"><a href="#多级有序" class="headerlink" title="多级有序"></a>多级有序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 第一章</span><br><span class="line">    1. 第一节</span><br><span class="line">        1. 第一小节</span><br><span class="line">            1. 第一小小节</span><br><span class="line">            2. 第二小小节 </span><br><span class="line">        2. 第二小节 </span><br><span class="line">    2. 第二节</span><br><span class="line">2. 第二章</span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong></p>
+<blockquote>
+<ol>
+<li>第一章<ol>
+<li>第一节<ol>
+<li>第一小节<ol>
+<li>第一小小节</li>
+<li>第二小小节 </li>
+</ol>
+</li>
+<li>第二小节 </li>
+</ol>
+</li>
+<li>第二节</li>
+</ol>
+</li>
+<li>第二章</li>
+</ol>
+</blockquote>
+<h3 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- [x] G</span><br><span class="line">- [ ] BG</span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong></p>
+<blockquote>
+<ul>
+<li style="list-style: none"><input type="checkbox" checked> G</li>
+<li style="list-style: none"><input type="checkbox"> BG</li>
+</ul>
+</blockquote>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 表头1    | 表头2    |</span><br><span class="line">| -------- | -------- |</span><br><span class="line">| 表格单元 | 表格单元 |</span><br><span class="line">| 表格单元 | 表格单元 |</span><br></pre></td></tr></table></figure>
+<p>画框框 最左边的框框可以省略。<br>第二行<code>-----</code>用以声明表格。(数量大于3)<br>空不空格不重要，歪歪扭扭也行。</p>
+<p><strong>效果</strong></p>
+<table>
+<thead>
+<tr>
+<th>表头1</th>
+<th>表头2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表格单元</td>
+<td>表格单元</td>
+</tr>
+<tr>
+<td>表格单元</td>
+<td>表格单元</td>
+</tr>
+</tbody>
+</table>
+<p>在第二行加入冒号以更改对齐方式（缺省左对齐）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">| 左对齐 | 居中     | 右对齐  |</span><br><span class="line">| :---- | :------: | -----: |</span><br><span class="line">| 这里  | 得       | 不一样 |</span><br><span class="line">| 长    | 才能体现 | 对齐    |</span><br></pre></td></tr></table></figure></p>
+<p><strong>效果</strong><br>| 左对齐 | 居中     | 右对齐  |<br>| :—- | :——: | —–: |<br>| 这里  | 得       | 不一样 |<br>| 长    | 才能体现 | 对齐    |</p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>基本格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![alt](URL &quot;title&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>alt和title都是可选参数，url就是图片的链接</p>
+<ul>
+<li>alt是图片加载失败时的替代文本</li>
+<li>title是鼠标悬停在图片上时显示的文字（注意引号）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>图片</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>![加载失败的百度logo](https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png &quot;baidulogo&quot;)</code></td>
+<td><img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png" alt="加载失败的百度logo" title="baidulogo"></td>
+</tr>
+<tr>
+<td><code>![加载失败的百度logo](233 &quot;baidulogo&quot;)</code></td>
+<td><img src="233" alt="加载失败的百度logo" title="baidulogo"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>基本格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[caption](url &quot;title&quot;)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>caption是显示的文字</li>
+<li>title是悬停文本</li>
+<li>即使这个url不存在或是无法访问也可以</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[百度](https://www.baidu.com &quot;悬停显示&quot;)</code></td>
+<td><a href="https://www.baidu.com" title="悬停显示" target="_blank" rel="noopener">百度</a></td>
+</tr>
+<tr>
+<td><code>[google](https://www.google.com &quot;无法访问&quot;)</code></td>
+<td><a href="https://www.google.com" title="无法访问" target="_blank" rel="noopener">google</a></td>
+</tr>
+<tr>
+<td><code>[G](csldsb &quot;dsb&quot;)</code></td>
+<td><a href="csldsb" title="dsb">G</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>多么高端的名字==<br>每个标题都是一个锚点<br>通过这样的代码，即可到达锚点<code>[gfm简介](#gfm简介)</code><br><a href="#gfm简介">gfm简介</a></p>
+<blockquote>
+<p>标题中英文字母都是小写</p>
+</blockquote>
+<hr>
+<h1 id="使用VS-code编辑Markdown"><a href="#使用VS-code编辑Markdown" class="headerlink" title="使用VS code编辑Markdown"></a>使用VS code编辑Markdown</h1><p>这里假装我已经知道了一些md语法，那么我就需要一个编辑器来写md。<br>注意到我儿子是用VS code写的，那我就试一下。</p>
+<h2 id="VS-code简介"><a href="#VS-code简介" class="headerlink" title="VS code简介"></a>VS code简介</h2><p>VS code是巨硬出的跨平台文本编辑器。<del>但是对我这种不会写代码的咸鱼来说体会不出和记事本的区别</del></p>
+<h2 id="开启markdown预览"><a href="#开启markdown预览" class="headerlink" title="开启markdown预览"></a>开启markdown预览</h2><p>VS code原生支持markdown预览，使用组合键<code>Shift+Ctrl+V</code>或者先<code>Ctrl+K</code>再<code>V</code>打开预览。</p>
+<h2 id="使用GFM风格预览"><a href="#使用GFM风格预览" class="headerlink" title="使用GFM风格预览"></a>使用GFM风格预览</h2><p>默认的并非github风格的markdown。看了看设置发现可以通过更改<code>&quot;markdown.styles&quot;: []</code>使用的css文件实现，后来发现有插件支持，就直接用插件了:)</p>
+<h2 id="更改安全预览设置"><a href="#更改安全预览设置" class="headerlink" title="更改安全预览设置"></a>更改安全预览设置</h2><p>VS code有一个对于markdown的安全设置，如果是严格的话可能导致一些图片无法加载。</p>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><del>本来以为hexo是gfm风格的写了一半发现是原生风格（所以这篇文章里面很多东西没正确渲染）？所以gfm只能用来写readme和issue</del><br>markdown是一种超轻量化的标记语言，相较于html语言，学习成本不是很高。<del>然而我还是记不住</del>  可能用熟了之后挺方便的吧。<br>之后要学习一下md的规范，瞎几把写其实很不清楚。（如果哪天还能想起来的话）</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Memo/" rel="tag"># Memo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/head.jpg"
+                alt="TOB" />
+            
+              <p class="site-author-name" itemprop="name">TOB</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/TOBNG" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i></a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:1103736766@qq.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i></a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://cubercsl.cn/" title="GOD C" target="_blank">GOD C</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://0ggmr0.cn/" title="GOD G" target="_blank">GOD G</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GFM简介"><span class="nav-number">1.</span> <span class="nav-text">GFM简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本语法"><span class="nav-number">2.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分割线"><span class="nav-number">2.1.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字输入"><span class="nav-number">2.2.</span> <span class="nav-text">文字输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行与章节"><span class="nav-number">2.3.</span> <span class="nav-text">行与章节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体效果"><span class="nav-number">2.4.</span> <span class="nav-text">字体效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#粗体·斜体·删除线"><span class="nav-number">2.4.1.</span> <span class="nav-text">粗体·斜体·删除线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本高亮"><span class="nav-number">2.4.2.</span> <span class="nav-text">文本高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码高亮"><span class="nav-number">2.4.3.</span> <span class="nav-text">代码高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用"><span class="nav-number">2.4.4.</span> <span class="nav-text">引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序号及列表"><span class="nav-number">2.5.</span> <span class="nav-text">序号及列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无序标号"><span class="nav-number">2.5.1.</span> <span class="nav-text">无序标号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无序多级"><span class="nav-number">2.5.2.</span> <span class="nav-text">无序多级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序标号"><span class="nav-number">2.5.3.</span> <span class="nav-text">有序标号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多级有序"><span class="nav-number">2.5.4.</span> <span class="nav-text">多级有序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复选框"><span class="nav-number">2.5.5.</span> <span class="nav-text">复选框</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">2.6.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片"><span class="nav-number">2.7.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">2.8.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锚点"><span class="nav-number">2.9.</span> <span class="nav-text">锚点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用VS-code编辑Markdown"><span class="nav-number">3.</span> <span class="nav-text">使用VS code编辑Markdown</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VS-code简介"><span class="nav-number">3.1.</span> <span class="nav-text">VS code简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启markdown预览"><span class="nav-number">3.2.</span> <span class="nav-text">开启markdown预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用GFM风格预览"><span class="nav-number">3.3.</span> <span class="nav-text">使用GFM风格预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更改安全预览设置"><span class="nav-number">3.4.</span> <span class="nav-text">更改安全预览设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TOB</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.6</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
